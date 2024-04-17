@@ -1,15 +1,16 @@
 package pro.sky.basket.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.basket.domain.Basket;
 
-import java.util.Collections;
 import java.util.List;
 @Service
-@SessionScope
 public class BasketServiceImpl implements BasketService {
-    private Basket basket;
+    private final Basket basket;
+
+    public BasketServiceImpl(Basket basket) {
+        this.basket = basket;
+    }
 
     @Override
     public List<Integer> add(List<Integer> id) {
