@@ -8,11 +8,7 @@ import java.util.List;
 @Component
 @SessionScope
 public class Basket {
-    private final List<Integer> items;
-
-    public Basket(List<Integer> items) {
-        this.items = items;
-    }
+    private final List<Integer> items = new ArrayList<>();
 
     public List<Integer> getItems() {
         return items;
